@@ -17,4 +17,8 @@ export class PetStoreAPI {
     async getUser(username: string) {
         return await this.request.get(`${this.baseURL}/user/${username}`);
     }
+
+    async getPetsByStatus() {
+        return await this.request.get(`${this.baseURL}/pet/findByStatus?status=sold`);
+    }
 }
