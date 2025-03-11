@@ -15,7 +15,7 @@ export class GoogleSearchPage {
     }
 
     async searchFor(term: string) {
-        await this.page.goto('https://www.google.com');
+        await this.page.goto("https://www.google.com");
         await this.acceptCookies();
         await this.page.fill('[name="q"]', term);
         await this.page.keyboard.press('Enter');

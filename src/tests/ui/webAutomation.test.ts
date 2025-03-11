@@ -1,6 +1,6 @@
 import { test, chromium } from '@playwright/test';
-import { GoogleSearchPage } from '../pages/GoogleSearchPage';
-import { WikipediaPage } from '../pages/WikipediaPage';
+import { GoogleSearchPage } from '../../pages/GoogleSearchPage';
+import { WikipediaPage } from '../../pages/WikipediaPage';
 
 test('Google Search and Wikipedia Automation Year', async () => {
     // Launch browser with slowMo

@@ -5,7 +5,7 @@ import { UserModel } from '../../models/UserModel';
 test('Retrieve user data', async ({ request }) => {
     const api = new PetStoreAPI(request);
     const user: UserModel = {
-        id: Math.floor(Math.random() * 100000),
+        id: Math.floor(Math.random() * 1000000),
         username: `autotest_${Date.now()}`,
         firstName: "Test",
         lastName: "User",
@@ -19,7 +19,7 @@ test('Retrieve user data', async ({ request }) => {
     expect(createResponse.status()).toBe(200);
     console.log('Created User:', user.username);
     
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     
     const response = await api.getUser(user.username);
     expect(response.status()).toBe(200);

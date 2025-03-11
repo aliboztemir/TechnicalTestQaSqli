@@ -1,19 +1,20 @@
 import { defineConfig } from '@playwright/test';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load .env variables
+dotenv.config();
 
 export default defineConfig({
   testDir: './src/tests',
   fullyParallel: true,
   timeout: 60000,
-  workers: 10,
+  workers: 5,
 
   projects: [
     {
       name: 'UI Tests',
-      testMatch: 'src/tests/webAutomation.test.ts',
+      testMatch: 'src/tests/ui/*.test.ts',
       use: {
+        baseURL: process.env.GOOGLE_URL,
         headless: false,
         viewport: { width: 1280, height: 720 },
         screenshot: 'only-on-failure',
